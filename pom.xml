@@ -34,6 +34,7 @@
     <properties>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
+        <mysql.version>5.7.34</mysql.version>
     </properties>
 
 </project>
