@@ -1,0 +1,42 @@
+#spring的配置文件，可以与properties同时使用，但更推荐使用yml
+person:
+#  字符串用单引号会将\n作为字符串输出，双引号会将\n作为换行符输出
+#  双引号不会转义，单引号会转义，双引号写和不写没有区别
+  username: zhangsan
+  boss: true
+  birth: 2019/12/9
+  age: 18
+#  interests:[篮球,足球]行内写法
+  interests:
+    - 篮球
+    - 足球
+  animal: [猫,狗]
+#  map的写法
+#  score:
+#    english:80
+#    math:90
+#map的更简单写法
+  score: {english: 80,math: 90}
+  salarys:
+    - 9999
+    - 9988
+  pet:
+    name: 阿狗
+    weight: 8
+  allPets:
+    sick:
+      - { name: 阿狗,weight: 9 }
+      - name: 阿猫
+        weight: 10
+    health:
+      - { name: 阿花,weight: 19 }
+
+spring:
+  banner:
+    location:
+    image:
+      bitdepth: 4
+    cache:
+      type: redis
+      redis:
+        time-to-live: 11000
