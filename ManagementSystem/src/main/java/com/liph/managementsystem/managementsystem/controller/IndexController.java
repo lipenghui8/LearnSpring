@@ -13,7 +13,7 @@ import javax.servlet.http.HttpSession;
  * @create: 2022-04-15 21:57
  **/
 @Controller
-public class indexController {
+public class IndexController {
     /**
      * 登录页
      * @return
