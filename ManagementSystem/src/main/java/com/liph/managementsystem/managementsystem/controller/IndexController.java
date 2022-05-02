@@ -39,12 +39,13 @@ public class IndexController {
 
     @GetMapping("/main")
     public String mainPage(HttpSession session,Model model){
-        Object loginUser=session.getAttribute("loginUser");
-        if(loginUser!=null){
-            return "main";
-        }else{
-            model.addAttribute("msg","请重新登录");
-            return "login";
-        }
+//        Object loginUser=session.getAttribute("loginUser");
+//        if(loginUser!=null){
+//            return "main";
+//        }else{
+//            model.addAttribute("msg","请重新登录");
+//            return "login";
+//        }
+        return "main";
     }
 }
