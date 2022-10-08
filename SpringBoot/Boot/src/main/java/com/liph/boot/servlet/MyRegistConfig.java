@@ -12,20 +12,21 @@ import java.util.Arrays;
  * @author: Mr.Li
  * @create: 2022-10-08 13:37
  **/
-@Configuration
+
+@Configuration(proxyBeanMethods = true)
 public class MyRegistConfig {
     @Bean
     public ServletRegistrationBean myServlet(){
         MyServlet myServlet=new MyServlet();
-        return new ServletRegistrationBean(myServlet,"/my","my01");
+        return new ServletRegistrationBean(myServlet,"/my","/my01");
     }
 
     @Bean
     public FilterRegistrationBean myFilter(){
         MyFilter myFilter=new MyFilter();
-        FilterRegistrationBean myFilterFilterRegistrationBean = new FilterRegistrationBean(myFilter);
-        myFilterFilterRegistrationBean.setUrlPatterns(Arrays.asList("/my","/css/*"));
-        return myFilterFilterRegistrationBean;
+        FilterRegistrationBean myFilterRegistrationBean = new FilterRegistrationBean(myFilter);
+        myFilterRegistrationBean.setUrlPatterns(Arrays.asList("/my","/css/*"));
+        return myFilterRegistrationBean;
     }
 
     @Bean

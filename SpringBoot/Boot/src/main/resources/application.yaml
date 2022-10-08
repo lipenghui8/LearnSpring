@@ -3,3 +3,12 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 100MB
+  datasource:
+    url: jdbc:mysql://180.76.185.155:3307/springboot?useSSL=false&useUnicode=true&characterEncoding=utf-8&serverTimezone=GMT%2B8
+    username: springboot
+    password: springboot_lph
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jdbc:
+    template:
+      query-timeout: 3
+
