@@ -5,7 +5,6 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
@@ -15,7 +14,7 @@ import java.util.Objects;
  * @create: 2022-10-06 19:21
  **/
 @Controller
-public class indexController {
+public class IndexController {
 
     @GetMapping(value = {"/","/login"})
     public String loginPage(){
@@ -36,13 +35,8 @@ public class indexController {
     }
 
     @GetMapping("main.html")
-    public String mainPage(HttpSession session){
-        Object loginUser=session.getAttribute("loginUser");
-        if(loginUser!=null){
-            return "main";
-        }else{
-            return "login";
-        }
 
+    public String mainPage(HttpSession session){
+        return "main";
     }
 }
