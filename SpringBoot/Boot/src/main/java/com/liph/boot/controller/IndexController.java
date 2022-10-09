@@ -1,10 +1,14 @@
 package com.liph.boot.controller;
 
+import com.liph.boot.bean.Account;
+import com.liph.boot.bean.City;
 import com.liph.boot.bean.User;
+import com.liph.boot.service.AccountService;
+import com.liph.boot.service.CityService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Objects;
@@ -38,5 +42,31 @@ public class IndexController {
 
     public String mainPage(HttpSession session){
         return "main";
+    }
+
+    @Autowired
+    AccountService accountService;
+
+    @ResponseBody
+    @GetMapping("/acct")
+    public Account getById(@RequestParam("id") Long id){
+
+        return accountService.getAccById(id);
+    }
+
+    @Autowired
+    CityService cityService;
+
+    @ResponseBody
+    @PostMapping("/city")
+    public City saveCity(City city){
+        cityService.saveCity(city);
+        return city;
+    }
+
+    @ResponseBody
+    @GetMapping("/city")
+    public City getCity(@RequestParam("id") Long id){
+        return cityService.getCity(id);
     }
 }
