@@ -51,7 +51,7 @@ public class IndexController {
     @GetMapping("/acct")
     public Account getById(@RequestParam("id") Long id){
 
-        return accountService.getAccById(id);
+        return accountService.getAcctById(id);
     }
 
     @Autowired
@@ -67,6 +67,6 @@ public class IndexController {
     @ResponseBody
     @GetMapping("/city")
     public City getCity(@RequestParam("id") Long id){
-        return cityService.getCity(id);
+        return cityService.getById(id);
     }
 }

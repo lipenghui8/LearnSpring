@@ -1,9 +1,15 @@
 package com.liph.boot.controller;
 
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.liph.boot.bean.User;
+import com.liph.boot.service.UserService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.Arrays;
 import java.util.List;
@@ -20,15 +26,28 @@ public class TableController {
         return "table/basic_table";
     }
 
+    @Autowired
+    UserService userService;
     @GetMapping("/dynamic_table")
-    public String dynamic_table(Model model){
+    public String dynamic_table(@RequestParam(value = "pn",defaultValue = "1") Integer pn, Model model){
 
-        List<User> users= Arrays.asList(new User("zhansan","1234"),
-                new User("lisi","aaaaaa"),
-                new User("penghui","88888"),
-                new User("wangwu","777777"));
-        model.addAttribute("users",users);
+        List<User> list= userService.list();
+        //分页查询数据
+        Page<User> userPage=new Page<>(pn,2);
+        //分页查询结果
+        Page<User> page=userService.page(userPage,null);
+        model.addAttribute("users",page);
         return "table/dynamic_table";
+    }
+
+    @GetMapping("/user/delete/{id}")
+    public String deleteUser(@PathVariable("id") Long id,
+                             @RequestParam(value = "pn",defaultValue = "1") Integer pn,
+                             RedirectAttributes ra){
+
+        userService.removeById(id);
+        ra.addAttribute("pn",pn);
+        return "redirect:/dynamic_table";
     }
 
     @GetMapping("/responsive_table")

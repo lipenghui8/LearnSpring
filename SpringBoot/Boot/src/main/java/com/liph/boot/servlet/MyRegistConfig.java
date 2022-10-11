@@ -17,8 +17,8 @@ import java.util.Arrays;
 public class MyRegistConfig {
     @Bean
     public ServletRegistrationBean myServlet(){
-        MyServlet myServlet=new MyServlet();
-        return new ServletRegistrationBean(myServlet,"/my","/my01");
+        MyServletImpl myServletImpl =new MyServletImpl();
+        return new ServletRegistrationBean(myServletImpl,"/my","/my01");
     }
 
     @Bean
