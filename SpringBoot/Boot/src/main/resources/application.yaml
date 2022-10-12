@@ -45,3 +45,10 @@ mybatis:
   configuration:
     map-underscore-to-camel-case: true
 
+management:
+  endpoints:
+    enabled-by-default: true
+    web:
+      exposure:
+        include: '*' #以web方式暴露所有端点
+

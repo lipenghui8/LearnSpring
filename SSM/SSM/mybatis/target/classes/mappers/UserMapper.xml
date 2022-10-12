@@ -5,6 +5,6 @@
 <mapper namespace="top.liph.mybatis.mapper.UserMapper">
     <!--int insertUser();-->
     <insert id="insertUser">
-       insert into `t_user` values (null, 'admin', '123456', 23, '男', '12345@qq.com')
+       insert into `t_user` values (null, 'admin', '123456', 25, '男', '12345@qq.com')
     </insert>
 </mapper>

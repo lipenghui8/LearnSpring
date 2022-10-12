@@ -6,7 +6,7 @@
             <transactionManager type="JDBC"/>
             <dataSource type="POOLED">
                 <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
-                <property name="url" value="jdbc:mysql://180.76.185.155:3307/ssm"/>
+                <property name="url" value="jdbc:mysql://180.76.185.155:3307/ssm?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;serverTimezone=GMT%2B8"/>
                 <property name="username" value="ssm"/>
                 <property name="password" value="ssm_lph"/>
             </dataSource>
@@ -14,6 +14,6 @@
     </environments>
     <!--引入映射文件-->
     <mappers>
-        <package name="mappers/UserMapper.xml"/>
+        <mapper resource="mappers/UserMapper.xml"/>
     </mappers>
 </configuration>
