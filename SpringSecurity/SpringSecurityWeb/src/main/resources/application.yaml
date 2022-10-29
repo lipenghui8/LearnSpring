@@ -1,0 +1,9 @@
+server:
+  port: 9653
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://180.76.185.155:3307/springsecurity?serverTimezone=GMT%2B8
+    username: springsecurity
+    password: PSzidaLA6Xe5J35M
