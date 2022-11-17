@@ -15,12 +15,7 @@ public class Comsumer {
 
     //接受消息
     public static void main(String[] args) throws IOException, TimeoutException {
-        ConnectionFactory factory = new ConnectionFactory();
-        factory.setHost("192.168.33.30");
-        factory.setUsername("admin");
-        factory.setPassword("1234");
-        Connection connection = factory.newConnection();
-        Channel channel = connection.createChannel();
+        Channel channel = RabbitMQUtils.getChannel();
         //推送的消息如何进行消费的接口回调
         System.out.println("等待接收消息.........");
         //推送的消息如何进行消费的接口回调
