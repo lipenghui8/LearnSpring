@@ -1,10 +1,10 @@
-package top.liph.springCloud.controller;
+package top.liph.springcloud.controller;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
-import top.liph.springCloud.entity.Payment;
-import top.liph.springCloud.vo.R;
+import top.liph.springcloud.entity.Payment;
+import top.liph.springcloud.vo.R;
 
 import javax.annotation.Resource;
 
@@ -16,7 +16,7 @@ import javax.annotation.Resource;
 @Slf4j
 @RequestMapping("/consumer")
 public class OrderController {
-    public static final String PAYMENT_URL="http://localhost:8001";
+    public static final String PAYMENT_URL="http://CLOUD-PAYMENT-SERVICE";
     @Resource
     private RestTemplate restTemplate;
 

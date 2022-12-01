@@ -1,8 +1,8 @@
 package top.liph.springcloud.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
-import top.liph.springcloud.entity.Payment;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import top.liph.springcloud.entity.Payment;
 
 /**
 * @author 86155

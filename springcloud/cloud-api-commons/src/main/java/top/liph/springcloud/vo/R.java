@@ -9,6 +9,7 @@ import lombok.NoArgsConstructor;
  * @create: 2022-11-30 20
  **/
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class R <T>{
     private Integer code;

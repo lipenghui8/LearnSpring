@@ -1,4 +1,4 @@
-package top.liph.springCloud.entity;
+package top.liph.springcloud.entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
