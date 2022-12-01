@@ -7,6 +7,8 @@
   <version>1.0</version>
   <modules>
     <module>cloud-provider-payment8001</module>
+      <module>cloud-consumer-order80</module>
+      <module>cloud-api-commons</module>
   </modules>
   <packaging>pom</packaging>
   <name>Maven</name>
@@ -22,6 +24,7 @@
     <mysql.version>8.0.18</mysql.version>
     <druid.version>1.1.16</druid.version>
     <mybatis.spring.boot.version>2.2.0</mybatis.spring.boot.version>
+    <mybatisplus.spring.boot.version>3.5.2</mybatisplus.spring.boot.version>
   </properties>
 
   <!-- 1、只是声明依赖，并不实际引入，子项目按需声明使用的依赖 -->
@@ -85,6 +88,11 @@
         <version>${lombok.version}</version>
         <optional>true</optional>
       </dependency>
+      <dependency>
+        <groupId>com.baomidou</groupId>
+        <artifactId>mybatis-plus-boot-starter</artifactId>
+        <version>${mybatisplus.spring.boot.version}</version>
+      </dependency>
     </dependencies>
   </dependencyManagement>
 
@@ -94,7 +102,6 @@
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>
         <configuration>
-          <fork>true</fork>
           <addResources>true</addResources>
         </configuration>
       </plugin>
