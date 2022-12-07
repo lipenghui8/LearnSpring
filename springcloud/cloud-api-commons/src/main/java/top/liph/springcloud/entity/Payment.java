@@ -26,6 +26,10 @@ public class Payment implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
+    public Payment(String s){
+        this.serial=s;
+    }
+
     @Override
     public boolean equals(Object that) {
         if (this == that) {
