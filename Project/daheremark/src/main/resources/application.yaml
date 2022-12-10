@@ -1,0 +1,27 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: hmdp
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://gz-cynosdbmysql-grp-813193rz.sql.tencentcdb.com:28525/daheremark?useSSL=false&serverTimezone=UTC
+    username: daheremark
+    password: daheremark_2022
+  redis:
+    host: 180.76.185.155
+    port: 6380
+    password: lph20020220
+    lettuce:
+      pool:
+        max-active: 10
+        max-idle: 10
+        min-idle: 1
+        time-between-eviction-runs: 10s
+  jackson:
+    default-property-inclusion: non_null # JSON处理时忽略非空字段
+mybatis-plus:
+  type-aliases-package: com.daheremark.entity # 别名扫描包
+logging:
+  level:
+    com.daheremark: debug
