@@ -1,5 +1,6 @@
 package com.daheremark.service;
 
+import com.daheremark.dto.Result;
 import com.daheremark.entity.Shop;
 import com.baomidou.mybatisplus.extension.service.IService;
 
@@ -13,4 +14,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
  */
 public interface IShopService extends IService<Shop> {
 
+    Result queryById(Long id);
 }
